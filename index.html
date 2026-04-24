@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Longevità — A Longevity Diet Planner</title>
+<meta name="description" content="A weekly meal planner inspired by Valter Longo's Longevity Diet, with UK-supermarket shopping lists." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- Grain overlay -->
+<div class="grain" aria-hidden="true"></div>
+
+<!-- Top bar -->
+<header class="topbar">
+  <div class="wrap">
+    <a href="#top" class="brand">
+      <span class="brand-mark">
+        <svg viewBox="0 0 32 32" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.4">
+          <path d="M16 4 C 22 12, 22 20, 16 28 C 10 20, 10 12, 16 4 Z" />
+          <path d="M16 4 V 28" opacity="0.5" />
+        </svg>
+      </span>
+      <span class="brand-text">
+        <span class="brand-name">Longevità</span>
+        <span class="brand-sub">a longevity diet planner</span>
+      </span>
+    </a>
+    <nav class="topnav">
+      <a href="#settings" class="nav-link">Your Rhythm</a>
+      <a href="#plan-section" class="nav-link">The Week</a>
+      <a href="#shopping" class="nav-link">Shopping</a>
+      <a href="#principles" class="nav-link">Principles</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- Hero -->
+<section class="hero">
+  <div class="wrap hero-wrap">
+    <div class="hero-text">
+      <div class="hero-kicker">
+        <span class="dot-kicker"></span>
+        Inspired by Valter Longo's research
+      </div>
+      <h1 class="hero-title">
+        Eat for a <em>long,</em><br />
+        <em>good</em> life.
+      </h1>
+      <p class="hero-lede">
+        A weekly meal planner built on the pillars of the <em>Longevity Diet</em> — mostly plants, a little fish, time-restricted eating, and ingredients you can actually find at your nearest Tesco.
+      </p>
+      <div class="hero-cta">
+        <button id="shuffle-btn" class="btn-primary">
+          <span class="btn-label">Shuffle Week</span>
+          <span class="btn-icon">
+            <svg viewBox="0 0 20 20" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 7h4l8 8h4" />
+              <path d="M3 15h4l2-2" />
+              <path d="M13 5l2 2h4" />
+              <path d="M17 4l2 3-2 3" />
+              <path d="M17 12l2 3-2 3" />
+            </svg>
+          </span>
+        </button>
+        <a href="#principles" class="btn-ghost">Read the principles</a>
+      </div>
+    </div>
+
+    <aside class="hero-side">
+      <div class="side-card">
+        <div class="side-num">No. 01</div>
+        <div class="side-title">Time-Restricted Eating</div>
+        <p class="side-body">Longo recommends an <strong>11–12 hour</strong> daily eating window — long enough to live by, short enough to reset.</p>
+      </div>
+      <div class="side-card alt">
+        <div class="side-num">No. 02</div>
+        <div class="side-title">Mostly Plants + a Little Fish</div>
+        <p class="side-body">Legumes as the main protein, 2–3 fish meals per week (sardines, salmon, cod — never tuna or swordfish).</p>
+      </div>
+      <div class="side-card">
+        <div class="side-num">No. 03</div>
+        <div class="side-title">Olive Oil & Nuts, Generously</div>
+        <p class="side-body">Around 3 tbsp of extra virgin olive oil and a handful (30g) of nuts daily.</p>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- Settings / Rhythm -->
+<section id="settings" class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-num">01</div>
+      <h2 class="section-title">Your Daily Rhythm</h2>
+      <p class="section-sub">Tune the plan to your age, lifestyle, and eating window.</p>
+    </div>
+
+    <div class="rhythm-grid">
+      <div class="rhythm-card">
+        <h3>Age Group</h3>
+        <p class="rhythm-hint">Longo recommends slightly more protein after 65 to protect muscle mass.</p>
+        <div class="toggle-row">
+          <button class="toggle" data-setting="ageGroup" data-value="under65">Under 65</button>
+          <button class="toggle" data-setting="ageGroup" data-value="over65">65 or older</button>
+        </div>
+      </div>
+
+      <div class="rhythm-card">
+        <h3>Meals per day</h3>
+        <p class="rhythm-hint">Two meals if you're managing weight; three if you're active or above a healthy weight.</p>
+        <div class="toggle-row">
+          <button class="toggle" data-setting="mealsPerDay" data-value="2">2 meals + snack</button>
+          <button class="toggle" data-setting="mealsPerDay" data-value="3">3 meals + snack</button>
+        </div>
+      </div>
+
+      <div class="rhythm-card">
+        <h3>Fish per week</h3>
+        <p class="rhythm-hint">2–3 portions of low-mercury fish. More than that isn't better.</p>
+        <div class="toggle-row">
+          <button class="toggle" data-setting="fishPerWeek" data-value="2">2 / week</button>
+          <button class="toggle" data-setting="fishPerWeek" data-value="3">3 / week</button>
+        </div>
+      </div>
+
+      <div class="rhythm-card">
+        <h3>Window length</h3>
+        <p class="rhythm-hint">A 12-hour window is Longo's sweet spot — sustainable and effective.</p>
+        <div class="toggle-row">
+          <button class="toggle" data-setting="windowLength" data-value="11">11 hours</button>
+          <button class="toggle" data-setting="windowLength" data-value="12">12 hours</button>
+        </div>
+      </div>
+
+      <div class="rhythm-card window-card">
+        <h3>Eating Window</h3>
+        <div class="window-display-row">
+          <div class="clock-wrapper">
+            <svg id="clock-dial" viewBox="0 0 180 180" width="180" height="180"></svg>
+          </div>
+          <div class="window-info">
+            <div class="window-times" id="window-display">8 AM – 8 PM</div>
+            <div class="window-length" id="window-length-display">12 hours</div>
+            <label class="slider-label">
+              Start time
+              <input type="range" id="window-start" min="5" max="10" step="1" value="8" class="slider" />
+              <div class="slider-track-labels">
+                <span>5am</span><span>10am</span>
+              </div>
+            </label>
+            <p class="window-footnote">No food within 3–4 hours of bedtime.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Plan section -->
+<section id="plan-section" class="section section-plan">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-num">02</div>
+      <h2 class="section-title">The Week Ahead</h2>
+      <p class="section-sub">Tap any meal for the recipe. Press <em>Shuffle Week</em> any time for a fresh plan.</p>
+      <button id="shuffle-btn-inline" class="btn-primary btn-inline" onclick="document.getElementById('shuffle-btn').click()">
+        <span class="btn-label">Shuffle Week</span>
+      </button>
+    </div>
+
+    <div id="plan-grid" class="plan-grid"></div>
+  </div>
+</section>
+
+<!-- Shopping list -->
+<section id="shopping" class="section section-shop">
+  <div class="wrap">
+    <div class="section-head section-head-split">
+      <div>
+        <div class="section-num">03</div>
+        <h2 class="section-title">Shopping List</h2>
+        <p class="section-sub">Everything for the week, sorted by the aisle you'll find it in. <span id="list-count" class="list-count"></span></p>
+      </div>
+      <div class="shop-actions">
+        <button id="copy-list" class="btn-ghost-sm">Copy</button>
+        <button id="print-list" class="btn-ghost-sm">Print</button>
+      </div>
+    </div>
+
+    <div id="shopping-list" class="shopping-wrap"></div>
+  </div>
+</section>
+
+<!-- Principles -->
+<section id="principles" class="section section-principles">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-num">04</div>
+      <h2 class="section-title">The Principles</h2>
+      <p class="section-sub">A quick primer on what the Longevity Diet actually is.</p>
+    </div>
+
+    <div class="principles-grid">
+      <article class="principle">
+        <div class="p-num">I</div>
+        <h3>Mostly Plant-Based, Pescatarian</h3>
+        <p>Legumes, vegetables, nuts, whole grains — with fish 2–3 times per week. No red meat. Minimal cheese and dairy. Low-mercury fish only: salmon, sardines, cod, trout, sea bream, prawns, anchovies, clams. Skip tuna and swordfish.</p>
+      </article>
+
+      <article class="principle">
+        <div class="p-num">II</div>
+        <h3>Low but Sufficient Protein</h3>
+        <p>Under 65: roughly 0.7–0.8 g per kg of bodyweight, mostly from plants. After 65: slightly more, with fish, eggs, and white meat added to preserve muscle. Beans and chickpeas are your main protein source.</p>
+      </article>
+
+      <article class="principle">
+        <div class="p-num">III</div>
+        <h3>Complex Carbs & Good Fats</h3>
+        <p>Whole grains, legumes, generous vegetables. About 3 tbsp of extra virgin olive oil daily and 30g (one handful) of nuts. Minimise sugar, saturated fat, refined flour.</p>
+      </article>
+
+      <article class="principle">
+        <div class="p-num">IV</div>
+        <h3>An 11–12 Hour Window</h3>
+        <p>All meals within an 11–12 hour window — e.g. 8am to 8pm. Longo argues <em>against</em> tighter windows (8 hours or less) as harder to sustain and linked to gallstones and cardiovascular risk. Don't eat within 3–4 hours of bed.</p>
+      </article>
+
+      <article class="principle">
+        <div class="p-num">V</div>
+        <h3>Two or Three Meals — Not Six</h3>
+        <p>If you're overweight: breakfast + one other meal + a low-sugar snack. If you're at a healthy weight, active, or over 65: three meals plus a snack. Never skip breakfast.</p>
+      </article>
+
+      <article class="principle p-fmd" id="fmd-card">
+        <div class="p-num">VI</div>
+        <h3>The Fasting-Mimicking Diet</h3>
+        <p>Two or three times per year, Longo recommends a 5-day fasting-mimicking protocol under medical supervision. This app doesn't generate the FMD — it's a specific clinical protocol — but it's the other half of the longevity equation.</p>
+        <div class="fmd-quarter">Current quarter: <strong id="fmd-quarter">—</strong></div>
+      </article>
+    </div>
+
+    <div class="disclaimer">
+      <p><strong>A note.</strong> This planner is inspired by Valter Longo's published work but is not medical advice and is not affiliated with Dr. Longo or his foundation. Speak to your GP or a registered dietitian before making major dietary changes — especially if you're pregnant, managing a chronic condition, or considering any fasting protocol.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap foot-wrap">
+    <div class="foot-brand">Longevità</div>
+    <div class="foot-text">Built with care, not medical authority. Read Longo's book <em>The Longevity Diet</em> (2018) for the full picture.</div>
+  </div>
+</footer>
+
+</main>
+
+<!-- Meal detail modal -->
+<div id="meal-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal-inner">
+    <button id="modal-close" class="modal-close" aria-label="Close">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+        <path d="M5 5l14 14M5 19l14-14" />
+      </svg>
+    </button>
+    <div id="modal-body"></div>
+  </div>
+</div>
+
+<script src="meals.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
